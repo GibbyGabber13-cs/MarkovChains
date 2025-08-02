@@ -75,5 +75,4 @@ int main(){
     }else{
         cout << "This controdicts Markovs theory. YOU DO HAVE FREE WILL! congrats!" << "\n";
     }
-    //next is showing dependent parts by showing pairs 5:32
 }
