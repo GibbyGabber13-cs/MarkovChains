@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <array>
+#include <cstdlib>
 using namespace std;
 int main(){
     string writingInput;
@@ -75,4 +76,48 @@ int main(){
     }else{
         cout << "This controdicts Markovs theory. YOU DO HAVE FREE WILL! congrats!" << "\n";
     }
+    cout << "now we will use these actual numbers to simulate a markov chain and prove that it is truely dependent" << "\n";
+    double jimmothySTART = ((double) rand() / (RAND_MAX));
+    bool consinant = false;
+    bool vowel = false;
+    if(jimmothySTART > cpercent){
+        consinant = true;
+    }else{
+        vowel = true;
+    }
+    double trancc = actualcc / cpercent;
+    double tranvv = actualvv / vpercent;
+    int finalcc = 0;
+    int finalvc = 0;
+    int amount = 1000000000;
+    for(int i = 0; i < amount ; i++){
+        double jimmothy = ((double) rand() / (RAND_MAX));
+        if(consinant == true && vowel == false){
+            if(jimmothy <= trancc){
+                consinant = true;
+                vowel = false;
+            }
+            if(jimmothy > trancc){
+                consinant = false;
+                vowel = true;
+            }
+            finalcc++;
+        } 
+        else if(consinant == false && vowel == true){
+            if(jimmothy <= tranvv){
+                consinant = false;
+                vowel = true;
+            }
+            if(jimmothy > tranvv){
+                consinant = true;
+                vowel = false;
+            }
+            finalvc++;
+        }
+    }
+    double cpercents = ((double)finalcc / amount) * 100;
+    double vpercents = ((double)finalvc / amount) * 100;
+    cout << "the program ran for " << amount << " iterations, finding percentages of:" << "\n";
+    cout << "concinences: " << cpercents << "\n";
+    cout << "vowels: " << vpercents << "\n";
 }
