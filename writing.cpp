@@ -120,4 +120,9 @@ int main(){
     cout << "the program ran for " << amount << " iterations, finding percentages of:" << "\n";
     cout << "concinences: " << cpercents << "\n";
     cout << "vowels: " << vpercents << "\n";
+    if((int)cpercent == (int)cpercents && (int)vpercent == (int)vpercents){
+        cout << "this proves its a dependent system that follows the law of large numbers" << "\n";
+    }else{
+        cout << "this DOES NOT proves its a dependent system that follows the law of large numbers" << "\n";
+    }
 }
